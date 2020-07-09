@@ -64,13 +64,12 @@ def prepareDirectory(directory):
 
 # Returns false if subreddit doesn't exist
 def verifySubreddit(subreddit):
-    URL = 'https://reddit.com/r/{}.json'.format(subreddit)
-    result= requests.get(URL, headers = {'User-agent':'getWallpapers'}).json()
-    try:
-        result['error']
+    URL = 'https://reddit.com/r/{}'.format(subreddit)
+    statusCode= requests.get(URL, headers = {'User-agent':'getWallpapers'}).status_code
+    if statusCode == 404:
         return False
-    except:
-        return True
+    else:   return True
+
 
 # Returns list of posts from subreddit as json
 def getPosts(subreddit, loops, after):
