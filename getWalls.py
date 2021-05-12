@@ -10,29 +10,22 @@
 #
 # Run example: python getWalls.py earthporn
 
-
-
-
 # ---------------------
 # USER CONFIG ---------
 # ---------------------
 
 # Where to store downloaded images
-directory = '~/Pictures/Wallpapers/Reddit/'
+directory = '~/winhome/OneDrive/Pictures/Wallpapers/Reddit/'
 # Which subreddit to download from
-subreddit = 'wallpapers'
+subreddit = 'EarthPorn'
 # Minimum width of image
-min_width = 1920
+min_width = 3840
 # Minimum height of image
-min_height = 1080
+min_height = 2160
 # How many posts to get for each request (Max 100)
 jsonLimit = 100
 # Increase this number if the number above (jsonLimit) isn't enough posts
 loops = 5
-
-
-
-
 
 # ---------------------
 # IMPORTS -------------
@@ -43,7 +36,6 @@ import sys
 import requests
 import urllib
 from PIL import ImageFile
-
 
 # ---------------------
 # FUNCTIONS -----------
@@ -69,7 +61,6 @@ def verifySubreddit(subreddit):
     if statusCode == 404:
         return False
     else:   return True
-
 
 # Returns list of posts from subreddit as json
 def getPosts(subreddit, loops, after):
@@ -157,7 +148,6 @@ def storeImg(post):
         return True
     else: return False
 
-
 # ---------------------
 # COLORS --------------
 # ---------------------
@@ -167,7 +157,6 @@ GREEN = '\033[1;32m'
 ORANGE = '\033[1;33m'
 PURPLE = '\033[1;35m'
 NC = '\033[0m'
-
 
 # ---------------------
 # START SCRIPT --------
@@ -210,7 +199,6 @@ print(PURPLE + 'Minimum resolution  : ' + ORANGE + str(min_width) + 'x' + str(mi
 print(PURPLE + 'Maximum downloads   : ' + ORANGE + str(jsonLimit*loops) + NC)
 print(DARK + '--------------------------------------------' + NC)
 print()
-
 
 # Loops through all posts
 for post in posts:
@@ -265,7 +253,6 @@ for post in posts:
         else:
             print(RED + 'Unexcepted error' + NC)
             index += 1
-
 
 # Print info when loop is finished
 print()
