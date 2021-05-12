@@ -3,6 +3,10 @@ Downloads HD wallpapers from whichever subreddit you want
 
 ![Screenshot](https://github.com/mrsorensen/reddit-wallpaper-downloader/blob/master/screenshot.png "Screenshot")
 
+## Prerequisites
+- Python 3+
+- requests (pip3 install requests)
+- PIL (pip3 install pillow)
 
 ## How to configure
 Edit config in getWalls.py
